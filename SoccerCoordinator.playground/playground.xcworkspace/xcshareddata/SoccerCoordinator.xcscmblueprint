@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "19AF9023F9C771EF7A38D12E0B490186F935DDB3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AC9CC78480A608F2EF5B51FDCBA666EE810D87D5" : 9223372036854775807,
+    "19AF9023F9C771EF7A38D12E0B490186F935DDB3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CA994BD3-AE91-4C53-B07A-50D32A654BAD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AC9CC78480A608F2EF5B51FDCBA666EE810D87D5" : "",
+    "19AF9023F9C771EF7A38D12E0B490186F935DDB3" : "SoccerCoordinator\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SoccerCoordinator",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SoccerCoordinator.playground",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/youssefGirgeis\/SoccerCoordinator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "19AF9023F9C771EF7A38D12E0B490186F935DDB3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:youssefGirgeis\/SoccerCoordinator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AC9CC78480A608F2EF5B51FDCBA666EE810D87D5"
+    }
+  ]
+}
