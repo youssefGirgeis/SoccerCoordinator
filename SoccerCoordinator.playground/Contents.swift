@@ -27,6 +27,7 @@ var teamDragons: [[String:String]] = []
 var teamSharks: [[String:String]] = []
 var teamRaptors: [[String:String]] = []
 let numberOfTeams = 3
+var allTeamsWithNames: [[String: String]] = []
 
 //////////////////////////////////////////////////////////////////
 
@@ -86,10 +87,28 @@ func addPlayersToTeams(){
 }
 addPlayersToTeams()
 
+
+func addTeamName(team: [[String: String]], name: String){
+    var allTeams = team
+    for index in 0..<team.count{
+        allTeams[index]["teamName"] = name
+    }
+    allTeamsWithNames += allTeams
+}
+
+
+addTeamName(team: teamDragons, name: "Dragon")
+addTeamName(team: teamSharks, name: "Sharks")
+addTeamName(team: teamRaptors, name: "Raptors")
+
+allTeamsWithNames
+
 teamRaptors
 teamSharks
-teamDragons
 
+
+teamDragons[0]["teamName"] = "Dragon"
+teamDragons
 
 
 
