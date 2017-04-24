@@ -85,8 +85,8 @@ func addPlayersToTeams(){
         counter2 += 1
     }
 }
-addPlayersToTeams()
 
+////////////////////////////////////////////////////////////////////////////
 
 func addTeamName(team: [[String: String]], name: String){
     var allTeams = team
@@ -96,19 +96,47 @@ func addTeamName(team: [[String: String]], name: String){
     allTeamsWithNames += allTeams
 }
 
+///////////////////////////////////////////////////////////////////////////
 
-addTeamName(team: teamDragons, name: "Dragon")
+func createLetters(){
+    
+    var letters: [String] = []
+    for player in allTeamsWithNames{
+        //print(allTeamsWithNames[index]["guardian"])
+        
+        var guardian: String! = player["guardian"]
+        var playerName: String! = player["name"]
+        var teamName: String! = player["teamName"]
+        var date: String
+        if teamName == "Dragons" {
+            date = "March 17, 1pm"
+        } else if teamName == "Sharks" {
+            date = "March 17, 3pm"
+        } else {
+            date = "March 18, 1pm"
+        }
+        
+        var letter = "Hello \(guardian!), \(playerName!) is on team \(teamName!) and the start date and time is \(date)"
+        letters.append(letter)
+    }
+    
+    printLetters(letters: letters)
+}
+
+func printLetters(letters: [String]){
+    
+    for letter in letters{
+        print(letter)
+    }
+}
+
+
+
+addPlayersToTeams()
+addTeamName(team: teamDragons, name: "Dragons")
 addTeamName(team: teamSharks, name: "Sharks")
 addTeamName(team: teamRaptors, name: "Raptors")
-
-allTeamsWithNames
-
-teamRaptors
-teamSharks
-
-
-teamDragons[0]["teamName"] = "Dragon"
-teamDragons
+createLetters()
 
 
 
