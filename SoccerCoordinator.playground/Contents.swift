@@ -27,9 +27,12 @@ var teamDragons: [[String:String]] = []
 var teamSharks: [[String:String]] = []
 var teamRaptors: [[String:String]] = []
 let numberOfTeams = 3
-var allTeamsWithNames: [[String: String]] = []
+var allTeamsWithNames: [[String: String]] = [] // this variable will hold all teams after assigning a team to each player
 
 //////////////////////////////////////////////////////////////////
+
+
+// this function select players that have experience and adds them to an array [playersWithExperience], and this array is array of dictionaries. it also returns array of dictionaries of all experienced players
 
 func experiencedPlayers() -> [[String:String]]{
     var playersWithExperience: [[String:String]] = []
@@ -43,6 +46,8 @@ func experiencedPlayers() -> [[String:String]]{
 
 /////////////////////////////////////////////////////////////////
 
+// this function select players that have no experience and adds them to an array [playersWithNoExperience], and this array is array of dictionaries. it also returns array of dictionaries of all non experienced players
+
 func nonExperiencedPlayers() -> [[String: String]]{
     var playersWithNoExperience: [[String:String]] = []
     for player in players{
@@ -55,12 +60,13 @@ func nonExperiencedPlayers() -> [[String: String]]{
 
 ///////////////////////////////////////////////////////////////
 
+// function is used to assign each player to team, where experienced players are equally distributed in all teams.
 func addPlayersToTeams(){
     let playersWithExperience = experiencedPlayers()
     let number = playersWithExperience.count/numberOfTeams // number of experienced players per team
 
-    var counter = 0;
-    var counter2 = 0
+    var counter = 0; // to iterate through all experiened players
+    var counter2 = 0 // to iterate through all non experiended players
     
     for playerWithExperience in playersWithExperience{
         switch counter{
@@ -88,25 +94,30 @@ func addPlayersToTeams(){
 
 ////////////////////////////////////////////////////////////////////////////
 
+//function below is used to add team to each player dictionary, the team where player was assigned to.
+
 func addTeamName(team: [[String: String]], name: String){
     var allTeams = team
     for index in 0..<team.count{
         allTeams[index]["teamName"] = name
     }
-    allTeamsWithNames += allTeams
+    allTeamsWithNames += allTeams //this variable will hold all teams after assigning a team to each player
+
 }
 
 ///////////////////////////////////////////////////////////////////////////
+
+//fucntion below is used to create a letter for each player in all teams
 
 func createLetters(){
     
     var letters: [String] = []
     for player in allTeamsWithNames{
         
-        var guardian: String! = player["guardian"]
-        var playerName: String! = player["name"]
-        var teamName: String! = player["teamName"]
-        var date: String
+        let guardian: String! = player["guardian"]
+        let playerName: String! = player["name"]
+        let teamName: String! = player["teamName"]
+        let date: String
         if teamName == "Dragons" {
             date = "March 17, 1pm"
         } else if teamName == "Sharks" {
@@ -114,13 +125,15 @@ func createLetters(){
         } else {
             date = "March 18, 1pm"
         }
-        var letter = "Hello \(guardian!), \n\n\(playerName!) is on team \(teamName!) and the start date and time is \(date). Please be on time.\n\nThank you \nYoussef\n\n"
+        let letter = "Hello \(guardian!), \n\n\(playerName!) is on team \(teamName!) and the start date and time is \(date). Please be on time.\n\nThank you \nYoussef\n\n"
         letters.append(letter)
     }
     printLetters(letters: letters)
 }
 
 //////////////////////////////////////////////////////////////////////////
+
+// this function is used to print all letters to the concole
 
 func printLetters(letters: [String]){
     
@@ -129,6 +142,9 @@ func printLetters(letters: [String]){
     }
 }
 
+///////////////////////////////////////////////////////////////////////
+
+// here i am just calling the function i have created.
 addPlayersToTeams()
 addTeamName(team: teamDragons, name: "Dragons")
 addTeamName(team: teamSharks, name: "Sharks")
