@@ -102,7 +102,6 @@ func createLetters(){
     
     var letters: [String] = []
     for player in allTeamsWithNames{
-        //print(allTeamsWithNames[index]["guardian"])
         
         var guardian: String! = player["guardian"]
         var playerName: String! = player["name"]
@@ -115,13 +114,13 @@ func createLetters(){
         } else {
             date = "March 18, 1pm"
         }
-        
-        var letter = "Hello \(guardian!), \(playerName!) is on team \(teamName!) and the start date and time is \(date)"
+        var letter = "Hello \(guardian!), \n\n\(playerName!) is on team \(teamName!) and the start date and time is \(date). Please be on time.\n\nThank you \nYoussef\n\n"
         letters.append(letter)
     }
-    
     printLetters(letters: letters)
 }
+
+//////////////////////////////////////////////////////////////////////////
 
 func printLetters(letters: [String]){
     
@@ -129,8 +128,6 @@ func printLetters(letters: [String]){
         print(letter)
     }
 }
-
-
 
 addPlayersToTeams()
 addTeamName(team: teamDragons, name: "Dragons")
